@@ -34,10 +34,12 @@ function App() {
     },
   ];
 
-  const [pokemonIndex, setPokemonIndex] = useState(0);
+   const [pokemonIndex, setPokemonIndex] = useState(0);
+   //const [pokemonIndex, setPokemonIndex] = useState(pokemonList);
 
-  const decrement = () => setPokemonIndex(pokemonIndex - 1);
-  const increment = () => setPokemonIndex(pokemonIndex + 1);
+
+  // const decrement = () => setPokemonIndex(pokemonIndex - 1);
+  // const increment = () => setPokemonIndex(pokemonIndex + 1);
 
   useEffect(() => {
     alert("hello pokemon trainer :)");
@@ -52,7 +54,8 @@ function App() {
   return (
     <>
       <div>
-        <NavBar increment={increment} decrement={decrement} />
+        <NavBar pokemonList={pokemonList} pokemonIndex={pokemonIndex} setPokemonIndex={setPokemonIndex} /> 
+       
         <PokemonCard pokemon={pokemonList[pokemonIndex]} />
       </div>
     </>
