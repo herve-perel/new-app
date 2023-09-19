@@ -5,6 +5,7 @@ import "./App.css";
 import MyTitle from "./components/MyTitle";
 import PokemonCard from "./components/PokemonCard";
 import NavBar from "./components/NavBar";
+import { useEffect } from "react";
 
 function App() {
   const pokemonList = [
@@ -38,10 +39,20 @@ function App() {
   const decrement = () => setPokemonIndex(pokemonIndex - 1);
   const increment = () => setPokemonIndex(pokemonIndex + 1);
 
+  useEffect(() => {
+    alert("hello pokemon trainer :)");
+  }, []);
+  
+  useEffect(() => {
+   pokemonList[pokemonIndex].name === "pikachu" ? 
+    (alert("pika pikachu !!!")) :""
+   
+}, []);
+
   return (
     <>
       <div>
-        <NavBar increment={increment} decrement={decrement}/>
+        <NavBar increment={increment} decrement={decrement} />
         <PokemonCard pokemon={pokemonList[pokemonIndex]} />
       </div>
     </>
