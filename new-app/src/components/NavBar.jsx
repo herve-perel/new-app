@@ -1,4 +1,6 @@
-function NavBar({increment, decrement}) {
+function NavBar({ increment, decrement }) {
+    
+  
   return (
     <>
       <div>
